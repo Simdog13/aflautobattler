@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  #gameContainer {
+    flex: 0 0 auto; /* Don't grow/shrink weirdly */
+    width: 800px;   /* Match canvas width */
+    height: 600px;  /* Match canvas height */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+   
+  #backgroundCanvas, #fieldCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  #backgroundCanvas {
+    z-index: 0;
+  }
+  
+  #fieldCanvas {
+    z-index: 1;
+    border: 2px solid #000;
+    background-color: transparent; /* Transparent so backgroundCanvas shows through */
+  }
+  
+  /* Top-left score panel */
+  #scorePanel {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  /* Top-right dev log */
+  #devToolsPanel {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.85);
+    color: #00ff88;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  /* Bottom taskbar */
+  #taskbar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background: #222;
+    color: white;
+    border-top: 2px solid #000;
+  }
+  
+  #taskbar button {
+    padding: 8px 12px;
+    font-weight: bold;
+    border: none;
+    background: #444;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #taskbar button:hover {
+    background: #666;
+  }

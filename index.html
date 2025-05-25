@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AFL Autobattler</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="gameContainer">
+    <canvas id="backgroundCanvas" width="800" height="600" style="position:absolute; top:0; left:0; z-index:0;"></canvas>
+    <canvas id="fieldCanvas" width="800" height="600" style="position:absolute; top:0; left:0; z-index:1;"></canvas>
+
+    <div id="scorePanel">
+      <div>Q1: <span id="scoreQ1">0.0 (0)</span></div>
+      <div>Q2: <span id="scoreQ2">0.0 (0)</span></div>
+      <div>Q3: <span id="scoreQ3">0.0 (0)</span></div>
+      <div>Q4: <span id="scoreQ4">0.0 (0)</span></div>
+      <div>Time: <span id="quarterTimer">20:00</span></div>
+    </div>
+
+    <div id="devToolsPanel">
+      <div><strong>Tick:</strong> <span id="tickCount">0</span></div>
+      <div><strong>Ball:</strong> <span id="ballStatus">Unknown</span></div>
+      <div><strong>Units:</strong> <span id="unitCount">0</span></div>
+      <ul id="actionLog"></ul>
+    </div>
+  </div>
+
+  <div id="taskbar">
+    <button id="startSimBtn">Start Sim</button>
+    <button id="pauseSimBtn" disabled>Pause Sim</button>
+    <button id="deployTeamBtn">Deploy Team</button>
+    <button id="speedUpBtn">Speed +</button>
+    <button id="speedDownBtn">Speed -</button>
+    <button id="createUnitToggle">Create Unit</button>
+    <button id="toggleInfiniteStamBtn">Infinite Stamina: OFF</button>
+  </div>
+
+  <!-- Create Unit Form -->
+  <form id="unitForm" style="display: none; padding: 10px;">
+    Name: <input id="unitName" required />
+    Role:
+    <select id="unitRole">
+      <option value="d">Defender</option>
+      <option value="m">Midfielder</option>
+      <option value="f">Forward</option>
+      <option value="r">Ruck</option>
+    </select>
+    Stamina: <input id="unitStam" type="number" value="100" />
+    Speed: <input id="unitSpd" type="number" value="5" />
+    Strength: <input id="unitStr" type="number" value="5" />
+    Confidence: <input id="unitConf" type="number" value="5" />
+    <button type="submit">Save Unit</button>
+  </form>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
